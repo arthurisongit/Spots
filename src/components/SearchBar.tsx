@@ -23,14 +23,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Enter a city name (e.g., Paris, Tokyo, New York)"
-          className="w-full py-4 px-5 pr-14 rounded-full border-2 border-gray-200 focus:border-cyan-600 focus:outline-none 
-                   text-lg shadow-md transition-all duration-300 placeholder:text-gray-400"
+          className="w-full py-5 px-6 pr-14 rounded-xl border border-gray-200 focus:border-black focus:outline-none 
+                   text-lg bg-white/80 backdrop-blur-sm transition-apple placeholder:text-gray-400"
           aria-label="Search for a city"
         />
         <button
           type="submit"
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-cyan-600 hover:bg-cyan-700 
-                   text-white p-3 rounded-full transition-colors duration-300"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black hover:bg-gray-900 
+                   text-white p-3 rounded-lg transition-apple"
           aria-label="Search"
         >
           <Search size={20} />
