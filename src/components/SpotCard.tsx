@@ -10,7 +10,7 @@ interface SpotCardProps {
 const SpotCard: React.FC<SpotCardProps> = ({ spot, index }) => {
   return (
     <div 
-      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 
+      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-apple 
                 flex flex-col h-full transform hover:-translate-y-1" 
       style={{ 
         animationDelay: `${index * 0.1}s`,
@@ -18,26 +18,26 @@ const SpotCard: React.FC<SpotCardProps> = ({ spot, index }) => {
         opacity: 0
       }}
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-56 overflow-hidden">
         <img 
           src={spot.image} 
           alt={spot.name} 
-          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
         />
-        <div className="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md">
+        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full py-1.5 px-3 shadow-sm">
           <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            <span className="font-bold text-sm">{spot.score.toFixed(1)}</span>
+            <Star className="w-4 h-4 text-black fill-black" />
+            <span className="font-medium text-sm">{spot.score.toFixed(1)}</span>
           </div>
         </div>
       </div>
       
-      <div className="p-5 flex flex-col flex-grow">
-        <h3 className="font-bold text-xl mb-2 text-gray-800">{spot.name}</h3>
-        <p className="text-gray-600 mb-4 flex-grow">{spot.description}</p>
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="font-semibold text-xl mb-2 text-gray-900">{spot.name}</h3>
+        <p className="text-gray-600 mb-4 flex-grow text-sm leading-relaxed">{spot.description}</p>
         
         <div className="mt-auto">
-          <div className="flex items-start gap-1 text-gray-500 mb-3">
+          <div className="flex items-start gap-1.5 text-gray-500 mb-4">
             <MapPin className="w-5 h-5 min-w-5 mt-0.5 text-gray-400" />
             <span className="text-sm">{spot.address}</span>
           </div>
@@ -46,8 +46,8 @@ const SpotCard: React.FC<SpotCardProps> = ({ spot, index }) => {
             href={spot.googleMapsUrl} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="block w-full bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-4 rounded-lg
-                    text-center transition-colors duration-300"
+            className="block w-full bg-black hover:bg-gray-900 text-white font-medium py-3 px-4 rounded-lg
+                    text-center transition-apple text-sm"
           >
             View on Google Maps
           </a>
